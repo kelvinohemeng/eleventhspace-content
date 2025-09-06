@@ -4,11 +4,19 @@ export const EVENTS_QUERY = defineQuery(`*[_type == "project"]{
   _id,
   name,
   profile,
-  problem,
-  approach,
+  objective,
+  solution,
+  client,
+  services,
+  date,
   slug,
   image,
-  "category": category[]-> {
+  gallery,
+  "productType": category[]-> {
+    _id,
+    title,
+  },
+  "service": service[]-> {
     _id,
     title,
   }

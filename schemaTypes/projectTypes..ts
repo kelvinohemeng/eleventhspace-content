@@ -39,41 +39,50 @@ export const projectType = defineType({
     defineField({
       name: 'profile',
       type: 'text',
-      title: 'Profile',
+      title: 'Project Profile',
     }),
     defineField({
-      name: 'problem',
+      name: 'objective',
       type: 'text',
-      title: 'Problem',
+      title: 'Objective',
+      initialValue:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam nisl nunc quis nisl.',
     }),
     defineField({
-      name: 'approach',
-      type: 'array',
-      title: 'Approach',
-      of: [{type: 'block'}],
+      name: 'solution',
+      type: 'text',
+      title: 'Solution',
     }),
     defineField({
-      name: 'projectType',
-      title: 'Project Type',
+      name: 'client',
+      type: 'string',
+      title: 'Client',
+    }),
+    defineField({
+      name: 'services',
+      type: 'string',
+      title: 'Services',
+    }),
+    defineField({
+      name: 'date',
+      type: 'string',
+      title: 'Date',
+    }),
+    defineField({
+      name: 'tags',
+      title: 'Project Tags',
       type: 'array',
-      of: [
-        {
-          type: 'string',
-          options: {
-            list: [
-              {title: 'Featured', value: 'featured'},
-              {title: 'Case Study', value: 'case-study'},
-              // {title: 'Open Source', value: 'open-source'},
-            ],
-          },
-        },
+      of: [{type: 'reference', to: {type: 'tagTypes'}}],
+      validation: (Rule) => [
+        Rule.error('Every Item should be unique').unique(),
+        Rule.required().error('At least on item is required'),
       ],
     }),
     defineField({
-      name: 'category',
-      title: 'Category',
+      name: 'service',
+      title: 'Service',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{type: 'reference', to: {type: 'service'}}],
       validation: (Rule) => [
         Rule.error('Every Item should be unique').unique(),
         Rule.required().error('At least on item is required'),
@@ -84,7 +93,7 @@ export const projectType = defineType({
     select: {
       title: 'name',
       media: 'image',
-      subtitle: 'profile',
+      subtitle: 'objective',
     },
     prepare(select) {
       return {
