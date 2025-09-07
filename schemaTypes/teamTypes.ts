@@ -39,7 +39,7 @@ export const teamTypes = defineType({
     select: {
       title: 'name',
       media: 'image',
-      subtitle: 'profile',
+      subtitle: 'role',
     },
     prepare(select) {
       return {
