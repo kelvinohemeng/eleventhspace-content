@@ -2,7 +2,7 @@ import {type SchemaTypeDefinition} from 'sanity'
 
 import {teamTypes} from './teamTypes'
 import {projectType} from './projectTypes.'
-import {categoryType} from './categoryTypes'
+import {categoryType} from './serviceTypes'
 import {blockContentType} from './blockContentType'
 import {tagTypes} from './tagTypes'
 

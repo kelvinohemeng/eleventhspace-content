@@ -1,4 +1,4 @@
-import {categoryType} from './categoryTypes'
+import {categoryType} from './serviceTypes'
 import {defineField, defineType} from 'sanity'
 
 export const projectType = defineType({
@@ -49,9 +49,25 @@ export const projectType = defineType({
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam nisl nunc quis nisl.',
     }),
     defineField({
+      name: 'objectiveImage',
+      title: 'Objective Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'solution',
       type: 'text',
       title: 'Solution',
+    }),
+    defineField({
+      name: 'solutionImage',
+      title: 'Solution Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'client',
