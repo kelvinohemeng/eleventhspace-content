@@ -1,4 +1,3 @@
-import {categoryType} from './serviceTypes'
 import {defineField, defineType} from 'sanity'
 
 export const projectType = defineType({
@@ -42,11 +41,15 @@ export const projectType = defineType({
       title: 'Project Profile',
     }),
     defineField({
-      name: 'objective',
+      name: 'challenge',
       type: 'text',
+      title: 'Challenge',
+    }),
+    defineField({
+      name: 'objective',
+      type: 'array',
       title: 'Objective',
-      initialValue:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam nisl nunc quis nisl.',
+      of: [{type: 'string'}],
     }),
     defineField({
       name: 'objectiveImage',
@@ -59,7 +62,17 @@ export const projectType = defineType({
     defineField({
       name: 'solution',
       type: 'text',
-      title: 'Solution',
+      title: 'Solution / Approach',
+    }),
+    defineField({
+      name: 'why',
+      type: 'text',
+      title: 'Why?',
+    }),
+    defineField({
+      name: 'signature',
+      type: 'text',
+      title: 'Signature Note',
     }),
     defineField({
       name: 'solutionImage',
@@ -74,14 +87,10 @@ export const projectType = defineType({
       type: 'string',
       title: 'Client',
     }),
-    defineField({
-      name: 'services',
-      type: 'string',
-      title: 'Services',
-    }),
+
     defineField({
       name: 'date',
-      type: 'string',
+      type: 'date',
       title: 'Date',
     }),
     defineField({
@@ -109,7 +118,7 @@ export const projectType = defineType({
     select: {
       title: 'name',
       media: 'image',
-      subtitle: 'objective',
+      subtitle: 'profile',
     },
     prepare(select) {
       return {
