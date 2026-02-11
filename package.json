@@ -10,20 +10,20 @@
     "build": "sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
-    "extract-schema": "sanity schema extract --path ../frontend/schema.json",
-    "typegen": "npx sanity@latest schema extract && sanity@latest typegen generate"
+    "extract-schema": "sanity schema extract --path ../eleventhspace-ssr/schema.json",
+    "typegen": "npx sanity schema extract && sanity typegen generate"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^4.10.2",
+    "@sanity/vision": "^4.22.0",
     "dotenv": "^16.5.0",
     "grog": "^0.0.1",
     "groq": "^4.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^4.10.2",
+    "sanity": "^4.22.0",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
