@@ -5,7 +5,15 @@ import {projectType} from './projectTypes.'
 import {categoryType} from './serviceTypes'
 import {blockContentType} from './blockContentType'
 import {tagTypes} from './tagTypes'
+import {jobListingType} from './jobListing'
 
 export const schema: {types: SchemaTypeDefinition[]} = {
-  types: [projectType, categoryType, blockContentType, teamTypes, tagTypes],
+  types: [
+    projectType,
+    categoryType,
+    blockContentType,
+    teamTypes,
+    tagTypes,
+    jobListingType,
+  ],
 }
